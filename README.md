@@ -1,21 +1,16 @@
-This is a proof-of-concept to show that Minecraft can execute Python code.
+Forked from: https://github.com/electronstudio/python-minecraft-plugin
 
-The only new code I've added to the sample is this bit:
-```java
-Context polyglot = Context.create();
-Value array = polyglot.eval("python", "[1,2,42,4]");
-int result = array.getArrayElement(2).asInt();
-System.out.println(result);
-getLogger().info("POLYGLOT "+result);
-```
+At the moment this is a proof of concept to pass values from Java to Python with use of GraalVM.
 
-This is just a single array from Python, not an entire plugin, but it proves it works.
+## Current Work
+
+Added function to `SamplePlugin.java` to call Python function, passing a string.
 
 ## Setup
 
 1. Download and unzip GraalVM: https://github.com/graalvm/graalvm-ce-builds/releases
 
-2. Install Python for GrallVM:
+2. Install Python for GraalVM:
 
     `~/Downloads/graalvm-ce-java8-20.0.0/Contents/Home/bin/gu install python`
 
